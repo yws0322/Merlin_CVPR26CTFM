@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    git ffmpeg libsm6 libxext6 tzdata ca-certificates \
+    git tzdata ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -r user && useradd -r -m -g user user \
