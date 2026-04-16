@@ -1,6 +1,6 @@
 # Merlin for CVPR 2026 CT FM Challenge — Task 1 (LP)
 
-Docker submission package for the [CVPR 2026 Foundation Models for 3D CT Challenge](https://github.com/kmin940/CVPR26-3DCTFMCompetition)
+Docker submission package for the [CVPR 2026 Foundation Models for 3D CT Challenge](https://www.codabench.org/competitions/12650/)
 using the [Merlin](https://github.com/StanfordMIMI/Merlin) model (Stanford MIMI) as a frozen 3D CT feature extractor.
 
 The container is dataset-agnostic: any folder of `.nii.gz` scans is accepted, and binary
