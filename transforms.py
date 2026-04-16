@@ -19,13 +19,6 @@ ROI_SIZE = (224, 224, 160)
 PIXDIM = (1.5, 1.5, 3)
 INTENSITY_RANGE = dict(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, clip=True)
 
-NON_ROI_DISEASES = frozenset({
-    "atherosclerosis",
-    "colorectal_cancer",
-    "ascites",
-    "lymphadenopathy",
-})
-
 
 def build_roi_transform():
     """Crop a 224×224×160 region centered on the binary fg_mask (label=1)."""
