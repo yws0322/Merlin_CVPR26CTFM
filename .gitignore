@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.tar.gz
+test_in/
+test_out*/
+test_demo/
+test_demo_outputs*/
+.DS_Store
