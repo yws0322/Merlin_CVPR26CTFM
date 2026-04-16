@@ -7,8 +7,21 @@ The container is dataset-agnostic: any folder of `.nii.gz` scans is accepted, an
 foreground masks are used when present. Outputs one `.h5` per case (dataset key `y_hat`,
 shape `(2048,)`).
 
-## Build
+## Get the image
 
+### Option A — Download pre-built image (~8.4 GB)
+A pre-built `merlin_lp.tar.gz` is available here:
+
+> 🔗 **https://huggingface.co/yws0322/cvpr26ctfm-merlin/resolve/main/merlin_lp.tar.gz**
+
+```bash
+# Download then load into Docker
+wget -O merlin_lp.tar.gz https://huggingface.co/yws0322/cvpr26ctfm-merlin/resolve/main/merlin_lp.tar.gz
+docker load -i merlin_lp.tar.gz
+docker images | grep merlin_lp   # confirm merlin_lp:latest is present
+```
+
+### Option B — Build from source
 ```bash
 bash build_docker.sh
 # → ./merlin_lp.tar.gz (bakes in Merlin checkpoint, Clinical-Longformer, ResNet-152)
