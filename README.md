@@ -64,6 +64,35 @@ docker run --gpus '"device=0"' -m 32G --rm \
     merlin_lp:latest /bin/bash -c "sh extract_feat_LP.sh"
 ```
 
+## Run without Docker (Python)
+
+The same `extract_feat_LP.py` works standalone — useful for quick local runs
+without building/loading the image.
+
+```bash
+# Setup
+uv venv --python 3.11
+source .venv/bin/activate
+uv pip install -r requirements.txt
+
+# Non-ROI mode (no mask)
+python extract_feat_LP.py \
+    -i /path/to/images \
+    -o /path/to/outputs \
+    --batch_size 4 --num_workers 4
+
+# ROI mode (binary fg_mask)
+python extract_feat_LP.py \
+    -i /path/to/images \
+    --masks_path /path/to/fg_masks/<disease> \
+    -o /path/to/outputs \
+    --batch_size 4 --num_workers 4
+```
+
+`batch_size` can be larger than 1 outside Docker (the `batch_size=1` constraint
+is only for the challenge submission). Larger batches speed up bulk extraction
+on training/val splits substantially.
+
 ## Files
 
 | File | Role |
